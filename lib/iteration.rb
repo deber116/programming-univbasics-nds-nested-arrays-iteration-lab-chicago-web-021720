@@ -39,14 +39,17 @@ def find_greater_pair(src)
     number1 = nil
     while element_index < src[row_index].count do
       if element_index == 0
-        food0 = src[row_index][element_index]
+        number0 = src[row_index][element_index]
       else
-        food1 = src[row_index][element_index]
+        number1 = src[row_index][element_index]
       end
       element_index += 1
     end
-    sentence = "I love #{food0} and #{food1} on my pizza"
-    new_array << sentence
+    if number0 > number1
+      new_array << number0
+    else
+      new_array << number1
+    end
     row_index += 1
   end
   new_array
