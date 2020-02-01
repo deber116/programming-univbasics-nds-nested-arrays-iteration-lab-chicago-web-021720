@@ -31,7 +31,25 @@ def find_greater_pair(src)
   # src will be an array of [ [number1, number2], ... [numberN, numberM] ]
   # Produce a new Array that contains the larger number of each of the pairs
   # that are in the inner Arrays
-  
+  new_array = []
+  row_index = 0
+  while row_index < src.count do
+    element_index = 0
+    number0 = nil
+    number1 = nil
+    while element_index < src[row_index].count do
+      if element_index == 0
+        food0 = src[row_index][element_index]
+      else
+        food1 = src[row_index][element_index]
+      end
+      element_index += 1
+    end
+    sentence = "I love #{food0} and #{food1} on my pizza"
+    new_array << sentence
+    row_index += 1
+  end
+  new_array
 end
 
 def total_even_pairs(src)
